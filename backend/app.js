@@ -6,14 +6,15 @@ var path = require("path");
 var mysql = require("mysql");
 var cors = require("cors");
 var port = 3001;
+require("dotenv").config();
 
 //Connection Info
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dbms",
-  multipleStatements: true,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  multipleStatements: process.env.DB_MULTIPLE_STATEMENTS === "true",
 });
 
 //Connecting To Database
@@ -630,28 +631,48 @@ app.get("/deleteAppt", (req, res) => {
   let uid = a.uid;
   let statement = `SELECT status FROM Appointment WHERE id=${uid};`;
   console.log(statement);
+
   con.query(statement, function (error, results, fields) {
-    if (error) throw error;
-    else {
-      results = results[0].status;
-      if (results == "NotDone") {
-        statement = `DELETE FROM Appointment WHERE id=${uid};`;
+    if (error) {
+      console.error(error);
+      res.status(500).send("Error querying appointment status");
+      return;
+    }
+
+    if (results.length === 0) {
+      res.status(404).send("Appointment not found");
+      return;
+    }
+
+    results = results[0].status;
+    if (results == "NotDone") {
+      statement = `DELETE FROM Appointment WHERE id=${uid};`;
+      console.log(statement);
+      con.query(statement, function (error, results, fields) {
+        if (error) {
+          console.error(error);
+          res.status(500).send("Error deleting appointment");
+          return;
+        }
+        res.send("Appointment deleted successfully");
+      });
+    } else {
+      if (typeof who !== "undefined" && who == "pat") {
+        statement = `DELETE FROM PatientsAttendAppointments WHERE appt = ${uid};`;
         console.log(statement);
         con.query(statement, function (error, results, fields) {
-          if (error) throw error;
+          if (error) {
+            console.error(error);
+            res.status(500).send("Error deleting patient appointment record");
+            return;
+          }
+          res.send("Patient appointment record deleted successfully");
         });
       } else {
-        if (who == "pat") {
-          statement = `DELETE FROM PatientsAttendAppointments p WHERE p.appt = ${uid}`;
-          console.log(statement);
-          con.query(statement, function (error, results, fields) {
-            if (error) throw error;
-          });
-        }
+        res.status(400).send("Operation not allowed");
       }
     }
   });
-  return;
 });
 
 // If 404, forward to error handler
