@@ -50,7 +50,7 @@ export class CreateAccount extends Component {
                 console.log("Submit", value);
 
                 fetch(
-                  "https://hospital-management-website-for-dbms-3.onrender.com/checkIfPatientExists?email=" +
+                  "https://hospital-management-website-for-dbms-7.onrender.com/checkIfPatientExists?email=" +
                     value.email
                 )
                   .then((res) => res.json())
@@ -64,7 +64,7 @@ export class CreateAccount extends Component {
                       console.log("no user found");
                     } else {
                       fetch(
-                        "https://hospital-management-website-for-dbms-3.onrender.com/makeAccount?name=" +
+                        "https://hospital-management-website-for-dbms-7.onrender.com/makeAccount?name=" +
                           value.firstName +
                           "&lastname=" +
                           value.lastName +

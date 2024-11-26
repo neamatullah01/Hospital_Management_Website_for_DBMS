@@ -45,7 +45,7 @@ const SidebarButtons = () => {
                     window.location = "/ApptList";
                   } else if (label === "Sign Out") {
                     fetch(
-                      "https://hospital-management-website-for-dbms-3.onrender.com/endSession"
+                      "https://hospital-management-website-for-dbms-7.onrender.com/endSession"
                     );
                     window.location = "/";
                   } else if (label === "Settings") {

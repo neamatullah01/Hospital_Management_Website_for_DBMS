@@ -94,7 +94,7 @@ export class Diagnose extends Component {
           <Form
             onSubmit={({ value }) => {
               fetch(
-                "https://hospital-management-website-for-dbms-3.onrender.com/diagnose?diagnosis=" +
+                "https://hospital-management-website-for-dbms-7.onrender.com/diagnose?diagnosis=" +
                   diagnosis +
                   "&prescription=" +
                   prescription +

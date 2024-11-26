@@ -229,7 +229,7 @@ function DoctorsDropdown() {
   const [value, setValue] = useState();
   const [doctorsList, setList] = useState([]);
   useEffect(() => {
-    fetch("https://hospital-management-website-for-dbms-3.onrender.com/docInfo")
+    fetch("https://hospital-management-website-for-dbms-7.onrender.com/docInfo")
       .then((res) => res.json())
       .then((res) => {
         let arr = [];
@@ -274,7 +274,7 @@ export class SchedulingAppt extends Component {
             onSubmit={({ value }) => {
               //probably fetch uid here, add one
               fetch(
-                "https://hospital-management-website-for-dbms-3.onrender.com/userInSession"
+                "https://hospital-management-website-for-dbms-7.onrender.com/userInSession"
               )
                 .then((res) => res.json())
                 .then((res) => {
@@ -282,7 +282,7 @@ export class SchedulingAppt extends Component {
                   var email_json = JSON.parse(string_json);
                   let email_in_use = email_json.email;
                   fetch(
-                    "https://hospital-management-website-for-dbms-3.onrender.com/checkIfApptExists?email=" +
+                    "https://hospital-management-website-for-dbms-7.onrender.com/checkIfApptExists?email=" +
                       email_in_use +
                       "&startTime=" +
                       theTime +
@@ -299,7 +299,7 @@ export class SchedulingAppt extends Component {
                         );
                       } else {
                         fetch(
-                          "https://hospital-management-website-for-dbms-3.onrender.com/genApptUID"
+                          "https://hospital-management-website-for-dbms-7.onrender.com/genApptUID"
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -308,7 +308,7 @@ export class SchedulingAppt extends Component {
                             let gen_uid = uid_json.id;
                             console.log(gen_uid);
                             fetch(
-                              "https://hospital-management-website-for-dbms-3.onrender.com/schedule?time=" +
+                              "https://hospital-management-website-for-dbms-7.onrender.com/schedule?time=" +
                                 theTime +
                                 "&endTime=" +
                                 endTime +
@@ -324,7 +324,7 @@ export class SchedulingAppt extends Component {
                                 theDoc
                             ).then((x) => {
                               fetch(
-                                "https://hospital-management-website-for-dbms-3.onrender.com/addToPatientSeeAppt?email=" +
+                                "https://hospital-management-website-for-dbms-7.onrender.com/addToPatientSeeAppt?email=" +
                                   email_in_use +
                                   "&id=" +
                                   gen_uid +

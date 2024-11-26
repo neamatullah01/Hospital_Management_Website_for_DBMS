@@ -35,7 +35,7 @@ export class ViewOneHistory extends Component {
   getHistory(value) {
     let email = "'" + value + "'";
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/OneHistory?patientEmail=" +
+      "https://hospital-management-website-for-dbms-7.onrender.com/OneHistory?patientEmail=" +
         email
     )
       .then((res) => res.json())
@@ -45,7 +45,7 @@ export class ViewOneHistory extends Component {
   allDiagnoses(value) {
     let email = "'" + value + "'";
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/allDiagnoses?patientEmail=" +
+      "https://hospital-management-website-for-dbms-7.onrender.com/allDiagnoses?patientEmail=" +
         email
     )
       .then((res) => res.json())

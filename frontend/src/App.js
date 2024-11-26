@@ -20,7 +20,7 @@ export default function App() {
   let [component, setComponent] = useState(<LogIn />);
   useEffect(() => {
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/userInSession"
+      "https://hospital-management-website-for-dbms-7.onrender.com/userInSession"
     )
       .then((res) => res.json())
       .then((res) => {

@@ -38,7 +38,7 @@ export class PatientsViewAppointments extends Component {
     let patName = value;
     console.log(patName);
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/userInSession"
+      "https://hospital-management-website-for-dbms-7.onrender.com/userInSession"
     )
       .then((res) => res.json())
       .then((res) => {
@@ -46,7 +46,7 @@ export class PatientsViewAppointments extends Component {
         var email_json = JSON.parse(string_json);
         let email_in_use = email_json.email;
         fetch(
-          "https://hospital-management-website-for-dbms-3.onrender.com/patientViewAppt?email=" +
+          "https://hospital-management-website-for-dbms-7.onrender.com/patientViewAppt?email=" +
             email_in_use
         )
           .then((res) => res.json())
@@ -96,7 +96,7 @@ export class PatientsViewAppointments extends Component {
                         label="Cancel"
                         onClick={() => {
                           fetch(
-                            "https://hospital-management-website-for-dbms-3.onrender.com/deleteAppt?uid=" +
+                            "https://hospital-management-website-for-dbms-7.onrender.com/deleteAppt?uid=" +
                               patient.ID
                           );
                           window.location.reload();
@@ -107,7 +107,7 @@ export class PatientsViewAppointments extends Component {
                         label="Delete"
                         onClick={() => {
                           fetch(
-                            "https://hospital-management-website-for-dbms-3.onrender.com/deleteAppt?uid=" +
+                            "https://hospital-management-website-for-dbms-7.onrender.com/deleteAppt?uid=" +
                               patient.ID
                           );
                           window.location.reload();

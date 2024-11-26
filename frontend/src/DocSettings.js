@@ -48,7 +48,7 @@ export class DocSettings extends Component {
                 let email_in_use = "";
                 console.log(value);
                 fetch(
-                  "https://hospital-management-website-for-dbms-3.onrender.com/userInSession"
+                  "https://hospital-management-website-for-dbms-7.onrender.com/userInSession"
                 )
                   .then((res) => res.json())
                   .then((res) => {
@@ -57,7 +57,7 @@ export class DocSettings extends Component {
                     email_in_use = email_json.email;
                     console.log(email_in_use);
                     fetch(
-                      "https://hospital-management-website-for-dbms-3.onrender.com/resetPasswordDoctor?email=" +
+                      "https://hospital-management-website-for-dbms-7.onrender.com/resetPasswordDoctor?email=" +
                         email_in_use +
                         "&oldPassword=" +
                         value.oldPassword +

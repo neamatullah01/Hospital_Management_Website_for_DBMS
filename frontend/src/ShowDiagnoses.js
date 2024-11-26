@@ -34,7 +34,7 @@ export class ShowDiagnoses extends Component {
   state = { diagnoses: [] };
   componentDidMount() {
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/showDiagnoses?id=" +
+      "https://hospital-management-website-for-dbms-7.onrender.com/showDiagnoses?id=" +
         id
     )
       .then((res) => res.json())

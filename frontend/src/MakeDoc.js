@@ -52,7 +52,7 @@ export class MakeDoc extends Component {
                 console.log("Submit", value);
                 console.log(value.email);
                 fetch(
-                  "https://hospital-management-website-for-dbms-3.onrender.com/checkIfDocExists?email=" +
+                  "https://hospital-management-website-for-dbms-7.onrender.com/checkIfDocExists?email=" +
                     value.email
                 )
                   .then((res) => res.json())
@@ -65,7 +65,7 @@ export class MakeDoc extends Component {
                       console.log("no user found");
                     } else {
                       fetch(
-                        "https://hospital-management-website-for-dbms-3.onrender.com/makeDocAccount?name=" +
+                        "https://hospital-management-website-for-dbms-7.onrender.com/makeDocAccount?name=" +
                           value.firstName +
                           "&lastname=" +
                           value.lastName +

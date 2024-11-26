@@ -50,7 +50,7 @@ const SidebarButtons = () => {
                   window.location = "/scheduleAppt";
                 } else if (label === "Sign Out") {
                   fetch(
-                    "https://hospital-management-website-for-dbms-3.onrender.com/endSession"
+                    "https://hospital-management-website-for-dbms-7.onrender.com/endSession"
                   );
                   window.location = "/";
                 } else if (label === "View Appointments") {
@@ -58,7 +58,7 @@ const SidebarButtons = () => {
                 } else if (label === "View Medical History") {
                   let email_in_use = "";
                   fetch(
-                    "https://hospital-management-website-for-dbms-3.onrender.com/userInSession"
+                    "https://hospital-management-website-for-dbms-7.onrender.com/userInSession"
                   )
                     .then((res) => res.json())
                     .then((res) => {

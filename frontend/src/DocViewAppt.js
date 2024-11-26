@@ -24,7 +24,7 @@ export class DocViewAppt extends Component {
 
   getNames() {
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/doctorViewAppt"
+      "https://hospital-management-website-for-dbms-7.onrender.com/doctorViewAppt"
     )
       .then((res) => res.json())
       .then((res) => this.setState({ apptlist: res.data }));
@@ -90,7 +90,7 @@ export class DocViewAppt extends Component {
                         label="Cancel"
                         onClick={() => {
                           fetch(
-                            "https://hospital-management-website-for-dbms-3.onrender.com/deleteAppt?uid=" +
+                            "https://hospital-management-website-for-dbms-7.onrender.com/deleteAppt?uid=" +
                               appt.id
                           );
                           window.location.reload();

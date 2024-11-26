@@ -71,7 +71,7 @@ class LogIn extends Component {
                 console.log("Submit", value);
                 if (value.isDoc === true) {
                   fetch(
-                    "https://hospital-management-website-for-dbms-3.onrender.com/checkDoclogin?email=" +
+                    "https://hospital-management-website-for-dbms-7.onrender.com/checkDoclogin?email=" +
                       value.email +
                       "&password=" +
                       value.password
@@ -87,7 +87,7 @@ class LogIn extends Component {
                     });
                 } else {
                   fetch(
-                    "https://hospital-management-website-for-dbms-3.onrender.com/checklogin?email=" +
+                    "https://hospital-management-website-for-dbms-7.onrender.com/checklogin?email=" +
                       value.email +
                       "&password=" +
                       value.password

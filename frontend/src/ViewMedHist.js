@@ -28,7 +28,7 @@ export class ViewMedHist extends Component {
     if (value !== undefined) patName = value;
     console.log(patName);
     fetch(
-      "https://hospital-management-website-for-dbms-3.onrender.com/MedHistView?name=" +
+      "https://hospital-management-website-for-dbms-7.onrender.com/MedHistView?name=" +
         patName +
         "&variable=words"
     )
