@@ -5,7 +5,7 @@ var path = require("path");
 // var logger = require('morgan');
 var mysql = require("mysql");
 var cors = require("cors");
-var port = 3001;
+var port = process.env.PORT || 3001;
 require("dotenv").config();
 
 //Connection Info
